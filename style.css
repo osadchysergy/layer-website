@@ -1,0 +1,309 @@
+/* ===== RESET & BASE ===== */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Кольори з вашого логотипу */
+    --color-red: #E63946;
+    --color-orange: #F4A259;
+    --color-blue: #4A90D9;
+    --color-dark: #1A1A2E;
+    --color-light: #FFFFFF;
+    --color-gray: #6B7280;
+    --color-gray-light: #F3F4F6;
+    
+    /* Градієнти */
+    --gradient-primary: linear-gradient(135deg, var(--color-red) 0%, var(--color-orange) 100%);
+    --gradient-bg: linear-gradient(180deg, #0F0F1A 0%, #1A1A2E 100%);
+    
+    /* Тіні */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-glow: 0 0 40px rgba(230, 57, 70, 0.3);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--gradient-bg);
+    color: var(--color-light);
+    min-height: 100vh;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ===== LAYOUT ===== */
+.container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* ===== HEADER ===== */
+.header {
+    margin-bottom: 48px;
+}
+
+.logo {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.02);
+}
+
+/* ===== MAIN CONTENT ===== */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title {
+    font-size: clamp(1.75rem, 5vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    background: linear-gradient(135deg, var(--color-light) 0%, #E0E0E0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    color: var(--color-gray);
+    margin-bottom: 40px;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ===== BUTTONS ===== */
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 48px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+}
+
+/* Primary Button - OLX */
+.btn-primary {
+    background: var(--gradient-primary);
+    color: var(--color-light);
+    box-shadow: var(--shadow-glow);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 60px rgba(230, 57, 70, 0.4);
+}
+
+/* Instagram Button */
+.btn-instagram {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: var(--color-light);
+}
+
+.btn-instagram:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 40px rgba(225, 48, 108, 0.4);
+}
+
+/* Telegram Button */
+.btn-telegram {
+    background: #0088cc;
+    color: var(--color-light);
+}
+
+.btn-telegram:hover {
+    transform: translateY(-2px);
+    background: #0099dd;
+    box-shadow: 0 0 40px rgba(0, 136, 204, 0.4);
+}
+
+/* ===== PRODUCTS PREVIEW ===== */
+.products-preview {
+    margin-bottom: 48px;
+}
+
+.products-label {
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.products-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 8px 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    transition: all 0.3s ease;
+}
+
+.tag:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--color-red);
+    color: var(--color-light);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    margin-top: auto;
+    padding-top: 32px;
+}
+
+.contact {
+    margin-bottom: 16px;
+}
+
+.contact-link {
+    color: var(--color-light);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--color-red);
+}
+
+.copyright {
+    font-size: 0.875rem;
+    color: var(--color-gray);
+    margin-bottom: 8px;
+}
+
+.location {
+    font-size: 0.875rem;
+    color: var(--color-gray);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (min-width: 640px) {
+    .container {
+        padding: 60px 32px;
+    }
+    
+    .buttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .btn {
+        flex: 0 0 auto;
+    }
+    
+    .logo {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 380px) {
+    .container {
+        padding: 32px 16px;
+    }
+    
+    .btn {
+        padding: 14px 24px;
+        font-size: 0.9375rem;
+    }
+    
+    .tag {
+        padding: 6px 12px;
+        font-size: 0.8125rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.header {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.title {
+    animation: fadeIn 0.6s ease-out 0.1s backwards;
+}
+
+.subtitle {
+    animation: fadeIn 0.6s ease-out 0.2s backwards;
+}
+
+.buttons {
+    animation: fadeIn 0.6s ease-out 0.3s backwards;
+}
+
+.products-preview {
+    animation: fadeIn 0.6s ease-out 0.4s backwards;
+}
+
+.footer {
+    animation: fadeIn 0.6s ease-out 0.5s backwards;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+    background: var(--color-red);
+    color: var(--color-light);
+}
